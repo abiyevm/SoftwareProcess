@@ -1,67 +1,74 @@
 # 🌱 Plant Harm Monitoring in Lithuania
-### Analysis of Agricultural Plant Harm Using Open Data (data.gov.lt)
+### An Analysis of Plant Damage Using Open Data
 
-This project analyzes agricultural plant harm caused by pests and diseases in Lithuania using publicly available open data.  
-It fetches the dataset from the Lithuanian Open Data Portal, cleans it, performs exploratory analysis, and visualizes key insights.
+This project is part of my **Software Process class assignment**, where I was tasked with selecting a real-world problem and analyzing it using publicly available data. I chose to investigate agricultural plant health in Lithuania and explore how different plant species are affected by pests and diseases.  
 
----
-
-## 📌 1. Project Overview
-
-Agricultural productivity is affected by various plant diseases and pests.  
-This project helps identify:
-
-- Which plant species experience the **highest levels of harm**
-- How plant harm **varies over time**
-- General trends useful for farming, agriculture research, and environmental monitoring
-
-The analysis supports farmers, agricultural institutions, and policy makers in making data-driven decisions.
+I gathered data from the official **Lithuanian Open Data Portal**, cleaned and analyzed it using Python, and created visualizations to better understand plant harm patterns.
 
 ---
 
-## 📊 2. Dataset Information
+## 📌 Why I Chose This Topic
 
-**Source:**  
-Lithuanian Open Data Portal (data.gov.lt)  
-API URL:  
-`https://get.data.gov.lt/datasets/gov/lzukt/Ivertis`
+Agriculture plays a vital role in Lithuania, and plant damage caused by pests and diseases can have significant impacts on crop yields. I wanted to answer questions like:
 
-**Key Fields Used:**
+- Which plant species are most affected by pests and diseases?  
+- How does overall plant harm change over time?  
+- What insights can I derive from open government data?  
 
-| Column Name | Description |
-|-------------|-------------|
-| `observation_date` | Date of observation |
+This assignment gave me the chance to work with **real-world messy datasets** and practice data cleaning, analysis, and visualization.
+
+---
+
+## 📊 Dataset Used
+
+I used a dataset from the **Lithuanian Open Data Portal (data.gov.lt)**:  
+API endpoint: `https://get.data.gov.lt/datasets/gov/lzukt/Ivertis`
+
+The dataset contains field observations of plant diseases and pests. Some of the main fields I focused on were:
+
+| Column | Description |
+|--------|----------------|
+| `observation_date` | Date when the observation was recorded |
 | `plant_name` | Name of the plant |
-| `disease_pest_name` | Specific disease or pest |
-| `harm_value` | Numeric harm score |
-| `violation_level` | Severity level of plant damage |
-| `municipality` | Observation location |
+| `disease_pest_name` | Pest or disease identified |
+| `harm_value` | Numeric value representing the severity of damage |
+| `municipality` | Location of the observation |
 
 ---
 
-## 🛠️ 3. Features
+## 🛠️ What I Did
 
-### ✔ Fetch data from API  
-Automatic retrieval of JSON data from the open data portal.
+### 1. Data Collection
+I used Python’s `requests` library to fetch the dataset directly from the API in JSON format.
 
-### ✔ Data cleaning  
-- Column renaming  
-- Date parsing  
-- Numeric conversion  
-- Missing value handling  
+### 2. Data Cleaning and Preparation
+I cleaned the data by:
 
-### ✔ Analysis functions  
-- **Top 5 plants by total harm**
-- **Yearly trend of plant harm**
+- Renaming columns for readability  
+- Converting observation dates into proper datetime format  
+- Converting `harm_value` to numeric  
+- Removing rows with missing essential values  
 
-### ✔ Visualizations  
-- Horizontal bar chart for top plants  
-- Line chart for yearly harm trends  
+This step ensured the data was ready for analysis.
+
+### 3. Data Analysis
+I implemented functions to:
+
+- Identify the **Top 5 plants by total harm value**  
+- Analyze the **yearly trend of total plant damage**  
+
+This helped me quantify which plants were most affected and how damage changed over time.
+
+### 4. Visualization
+Using **Matplotlib** and **Seaborn**, I created:
+
+- A bar chart showing the plants with the highest total harm  
+- A line chart showing trends in plant damage over the years  
+
+These visualizations made the data easier to interpret and communicate.
 
 ### Image
-<img width="1919" height="1017" alt="Screenshot 2025-11-19 210545" src="https://github.com/user-attachments/assets/5867514e-3b74-45e3-9a58-a682b2e7abaf" />
+<img width="1919" height="1017" alt="Screenshot 2025-11-19 210545" src="https://github.com/user-attachments/assets/38505a72-b0bf-489e-aea4-3877889435e8" />
 
 
-
-## 📂 4. Project Structure
 
